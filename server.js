@@ -4,7 +4,7 @@ app.use(express.json({ limit: '50mb' }));
 
 let latest = { S: "", U: "" };
 
-app.post("/submit", (req, res) => {
+app.post("/EXCUSEMESAAR", (req, res) => {
     const text = String(req.body.text || "").trim();
     const user = String(req.body.user || "").trim();
     latest = { S: text, U: user };

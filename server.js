@@ -8,6 +8,23 @@ let latest = {
     U: ""
 };
 
+app.post("/EXCUSEMESAAR", (req, res) => {
+    latest = {
+        S: String(req.body.text || ""),
+        U: String(req.body.user || "")
+    };
+
+    console.log("Received:");
+    console.log(latest);
+
+    res.send("ok");
+});
+
+app.get("/EXCUSEMESAAR", (req, res) => {
+    res.json(latest);
+});
+
+
 app.get("/", (req, res) => {
     res.send(`
 <!DOCTYPE html>
@@ -15,30 +32,29 @@ app.get("/", (req, res) => {
 <head>
     <title>4b5g</title>
 
-    <meta property="og:title" content="my lovely little webserver" />
-    <meta property="og:description" content="no noobs allowed!" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/ussdhiudhisuisdui/destornilladormarcaphilips/refs/heads/main/csgoi.png" />
-    <meta property="og:type" content="article" /> <meta name="theme-color" content="#00a8fc" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:title" content="my lovely little webserver">
+    <meta property="og:description" content="no noobs allowed!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ussdhiudhisuisdui/destornilladormarcaphilips/refs/heads/main/csgoi.png">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#00a8fc">
+    <meta name="twitter:card" content="summary_large_image">
 
     <style>
         body {
-            background: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 100px;
+            background:#111;
+            color:white;
+            font-family:Arial;
+            text-align:center;
+            padding-top:100px;
         }
 
         h1 {
-            font-size: 70px;
-            margin-bottom: 10px;
+            font-size:70px;
         }
 
         p {
-            font-size: 20px;
-            color: #aaa;
+            color:#aaa;
+            font-size:20px;
         }
     </style>
 </head>
@@ -49,23 +65,6 @@ app.get("/", (req, res) => {
 </body>
 </html>
     `);
-});
-
-
-app.post("/EXCUSEMESAAR", (req, res) => {
-    latest = {
-        S: String(req.body.text || ""),
-        U: String(req.body.user || "")
-    };
-
-    console.log("Updated:", latest);
-
-    res.send("ok");
-});
-
-
-app.get("/latest", (req, res) => {
-    res.json(latest);
 });
 
 

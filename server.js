@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
     <meta property="og:title" content="my lovely little webserver" />
     <meta property="og:description" content="no noobs allowed!" />
     <meta property="og:image" content="https://raw.githubusercontent.com/ussdhiudhisuisdui/destornilladormarcaphilips/refs/heads/main/csgoi.png" />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#00a8fc" />
+    <meta property="og:type" content="article" /> <meta name="theme-color" content="#00a8fc" />
+    
     <meta name="twitter:card" content="summary_large_image" />
 
     <style>
@@ -51,6 +51,7 @@ app.get("/", (req, res) => {
     `);
 });
 
+
 app.post("/EXCUSEMESAAR", (req, res) => {
     latest = {
         S: String(req.body.text || ""),
@@ -63,7 +64,6 @@ app.post("/EXCUSEMESAAR", (req, res) => {
 });
 
 
-// Roblox reads this
 app.get("/latest", (req, res) => {
     res.json(latest);
 });

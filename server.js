@@ -1,32 +1,29 @@
 const express = require("express");
 const app = express();
-
 app.use(express.json({ limit: "50mb" }));
-
 let latest = {
     S: "",
     U: ""
 };
-
-
-// WinForms POSTs here
+let deleteTimer;
 app.post("/EXCUSEMESAAR", (req, res) => {
     latest = {
         S: String(req.body.text || ""),
         U: String(req.body.user || "")
     };
+    clearTimeout(deleteTimer);
 
+    deleteTimer = setTimeout(() => {
+        latest = {
+            S: "",
+            U: ""
+        };
+    }, 2000);
     res.send("ok");
 });
-
-
-// Roblox GETs here
 app.get("/EXCUSEMESAAR", (req, res) => {
     res.json(latest);
 });
-
-
-// Website + Discord embed
 app.get("/", (req, res) => {
     res.send(`
 <!DOCTYPE html>
@@ -69,6 +66,4 @@ app.get("/", (req, res) => {
 </html>
     `);
 });
-
-
 app.listen(process.env.PORT || 3000, "0.0.0.0", () => {});

@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
     <meta property="og:title" content="my lovely little webserver" />
     <meta property="og:description" content="no noobs allowed!" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/DexPPP/DexPPP.github.io/main/Version2.png" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/ussdhiudhisuisdui/destornilladormarcaphilips/refs/heads/main/csgoi.png" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#00a8fc" />
     <meta name="twitter:card" content="summary_large_image" />

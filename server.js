@@ -15,10 +15,12 @@ app.get("/", (req, res) => {
 <head>
     <title>4b5g</title>
 
-    <meta property="og:title" content="4b5g">
-    <meta property="og:description" content="no noobs allowed!">
-    <meta property="og:image" content="https://images.steamusercontent.com/ugc/54715116253496175/BF639BCE9BC61E0D6B919EFCC11C4129399F2513/">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="my lovely little webserver" />
+    <meta property="og:description" content="no noobs allowed!" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/DexPPP/DexPPP.github.io/main/Version2.png" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#00a8fc" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <style>
         body {

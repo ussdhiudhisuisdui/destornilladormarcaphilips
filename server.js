@@ -22,13 +22,14 @@ app.get("/", (req, res) => {
     res.send(`
 <!DOCTYPE html>
 <html>
-<head><title>Status</title></head>
-<body style="background:#111;color:#0f0;font-family:monospace;text-align:center;padding-top:100px;">
-    <h1 style="font-size:70px;">NOTHING TO SEE HERE...</h1>
-    <p>boring service • move along</p>
-    <br><br><br><br><br><br><br><br><br><br>
-    <span style="color:#222;font-size:9px;">v2026</span>
-</body></html>`);
+<head>
+    <title>Status</title>
+</head>
+<body style="text-align:center; margin-top:100px; font-family:Georgia, serif;">
+    <h1>ge tout noob</h1>
+    <p>only pro gamers are allowed here</p>
+</body>
+</html>`);
 });
 
 app.listen(process.env.PORT || 3000, () => console.log("LIVE"));

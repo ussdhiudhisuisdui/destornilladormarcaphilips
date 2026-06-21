@@ -51,7 +51,6 @@ app.get("/", (req, res) => {
     `);
 });
 
-
 app.post("/EXCUSEMESAAR", (req, res) => {
     latest = {
         S: String(req.body.text || ""),
@@ -64,6 +63,7 @@ app.post("/EXCUSEMESAAR", (req, res) => {
 });
 
 
+// Roblox reads this
 app.get("/latest", (req, res) => {
     res.json(latest);
 });

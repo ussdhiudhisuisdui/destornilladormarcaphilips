@@ -8,23 +8,25 @@ let latest = {
     U: ""
 };
 
+
+// WinForms POSTs here
 app.post("/EXCUSEMESAAR", (req, res) => {
     latest = {
         S: String(req.body.text || ""),
         U: String(req.body.user || "")
     };
 
-    console.log("Received:");
-    console.log(latest);
-
     res.send("ok");
 });
 
+
+// Roblox GETs here
 app.get("/EXCUSEMESAAR", (req, res) => {
     res.json(latest);
 });
 
 
+// Website + Discord embed
 app.get("/", (req, res) => {
     res.send(`
 <!DOCTYPE html>
@@ -41,20 +43,21 @@ app.get("/", (req, res) => {
 
     <style>
         body {
-            background:#111;
-            color:white;
-            font-family:Arial;
-            text-align:center;
-            padding-top:100px;
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
         }
 
         h1 {
-            font-size:70px;
+            font-size: 70px;
+            margin-bottom: 10px;
         }
 
         p {
-            color:#aaa;
-            font-size:20px;
+            font-size: 20px;
+            color: #aaa;
         }
     </style>
 </head>
@@ -68,6 +71,4 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Server running");
-});
+app.listen(process.env.PORT || 3000, "0.0.0.0", () => {});
